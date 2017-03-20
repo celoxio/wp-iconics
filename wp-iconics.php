@@ -3,7 +3,7 @@
 Plugin Name: WP-Iconics
 Plugin URI: https://celox.io
 Description: 1,800 font-icons easily accessible via short codes.
-Version: 0.0.3
+Version: 0.0.4
 Author: Martin Pfeffer
 Author URI: https://celox.io
 License: Apache 2.0
@@ -92,7 +92,7 @@ add_shortcode('wp_iconics_demo', function () {
     foreach ($icons as $icon) {
         $i++;
 
-        $res .= '<td class="clx_dtd">' . getIcon($icon) . '</td>';
+        $res .= '<td class="clx_dtd">' . clx_wpi_get_icon($icon) . '</td>';
         if ($i % 10 === 0) {
             $res .= '<tr></tr>';
         }
@@ -109,6 +109,6 @@ add_shortcode('wp_iconics_demo', function () {
  *
  * @return string the icon.
  */
-function getIcon($icon) {
+function clx_wpi_get_icon($icon) {
     return '<span class="mdi ' . $icon . ' clx_dsp"></span><label class="clx_dli">' . $icon . '</label>';
 }
